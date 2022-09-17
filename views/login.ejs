@@ -25,7 +25,7 @@
     <div class="navbar">
       <div class="container">
         <h1><a href="./">FURRURU 呼嚕嚕</a></h1>
-        <% if(messages.error) {%> <%= messages.error %> <% } %>
+
         <ul class="menu">
           <li><a href="./booking">快速媒合</a></li>
           <li><a href="./schedule">寶貝動態</a></li>
@@ -42,7 +42,7 @@
         <div class="title">
           <p class="FURRURU_title">歡迎使用呼嚕嚕</p>
         </div>
-
+        <% if(messages.error) {%> <%= messages.error %> <% } %>
         <form action="/login" method="POST" class="reg-form">
           <div>
             <label for="email">信箱</label>

@@ -41,9 +41,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride("_method"));
 
-app.get("/", (req, res) => {
-  res.render("index.ejs");
-});
+// app.get("/", (req, res) => {
+//   res.render("index.ejs");
+// });
+const indexRouter = require("./routes/index");
+const petsRouter = require("./routes/pets");
+app.use("/", indexRouter);
+
 app.get("/about", (req, res) => {
   res.render("about");
 });
@@ -59,6 +63,11 @@ app.get("/schedule", checkAuthenticated, (req, res) => {
 app.get("/cam", checkAuthenticated, (req, res) => {
   res.render("cam");
 });
+
+app.use("/pets", petsRouter);
+// app.get("/pets", (req, res) => {
+//   res.render("pets.ejs");
+// });
 // users login
 
 app.post(
