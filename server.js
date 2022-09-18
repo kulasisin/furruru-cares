@@ -11,7 +11,7 @@ const session = require("express-session");
 const methodOverride = require("method-override");
 const port = 5000;
 const ip = "127.0.0.1";
-
+const expressLayout = require("express-ejs-layouts"); //layout
 const initializePassport = require("./passport-config");
 initializePassport(
   passport,
@@ -40,12 +40,20 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride("_method"));
+//layout模板設定
+app.set("layout", "layouts/layout");
+app.use(expressLayout);
 
 // app.get("/", (req, res) => {
 //   res.render("index.ejs");
 // });
 const indexRouter = require("./routes/index");
 const petsRouter = require("./routes/pets");
+const bodyParser = require("body-parser"); //取得表單資料工具
+
+app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
+
+//網頁routers
 app.use("/", indexRouter);
 
 app.get("/about", (req, res) => {
