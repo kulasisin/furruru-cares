@@ -52,45 +52,7 @@
       <div class="tech">
         <h2>快速媒合</h2>
         <p>我們將提供最適合您寶貝的服務</p>
-      </div>
-    
-    <ul class="caretaker-list">
-      <% caretakers.forEach(caretaker=>{%>
-      <li><div class="caretaker">
-        <img src=<%= caretaker.pic %> al
-t="照護人員" class="caretaker-pic">        
-<div class="info">
-          <p class="caretaker_title"><%= caretaker.name %></p>
-          <span><%= caretaker.location %></span><span><%= caretaker.distance %>km</span>
-          <ul class="service">
-            <li><img src="../img/CheckBox.png" alt=""><p><%= caretaker.service %></p></li>
-          
-          </ul>
-          <div class="review">
-          <p>評價：<%= caretaker.rating %></p>
-          <!-- <img src="#" alt="星"> -->
-          <a href="#" class="review-number">(<%= caretaker.commentNumber %>則)</a>
-          </div>
-        </div>
-      
-        <div class="tag">
-          <ul>
-            <li><p><%= caretaker.tag %></p></li>
-          </ul>
-      </div>
-      <div class="more-info">
-        
-        
-        <form method="GET" action="/caretakers/<%=caretaker.id%>">
-          <button type="submit" class="moreInfo" id= "<%= caretaker.id %>" >更多資訊</button>
-        </form>
-        <a href="#">收藏</a>
-        
-      </div>
-    </li>
-
-    <% })%>
-    </ul>
+     </div> 
     <div class="safeplan_pic">
      <img src="./img/caretakers.png" alt="caretakers_demo_pic">
     </div>

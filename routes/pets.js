@@ -7,6 +7,7 @@ router.get("/", async (req, res) => {
   try {
     const pets = await Pet.find({});
     res.render("pets/pets-index", { pets: pets });
+    console.log(pets);
   } catch {
     res.redirect(`/`);
   }

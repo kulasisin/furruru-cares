@@ -816,6 +816,7 @@ h2 {
     height: 500px;
     background: url(../img/monitor.jpg);
     background-size: cover;
+    display: block;
   }
   .safeplan img {
     display: block;
@@ -852,6 +853,7 @@ h3 {
 .caretaker {
   display: flex;
   padding: 20px 10px;
+  position: relative;
 }
 .caretaker-pic {
   max-width: 200px;
@@ -918,7 +920,32 @@ h3 {
   text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.8);
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.8);
 }
-
+.more-info {
+  position: absolute;
+  right: 0;
+  display: flex;
+  padding-right: 15px;
+}
+.more-info button,
+.more-info a {
+  text-align: right;
+  display: block;
+  padding: 8px 8px;
+  margin-right: 3px;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 50px;
+  color: #ff7e42;
+  border: 0px;
+  background: #fff;
+  font-weight: bolder;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.8);
+}
+.more-info button:hover,
+.more-info a:hover {
+  background-color: #ff7e42;
+  color: #fff;
+}
 /* pets page */
 .pet_content {
   max-width: 800px;

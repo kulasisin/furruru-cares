@@ -43,12 +43,21 @@ app.use(methodOverride("_method"));
 //layout模板設定
 app.set("layout", "layouts/layout");
 app.use(expressLayout);
+//接資料庫
+const mongoose = require("mongoose");
 
+mongoose.connect(process.env.DATABASE_URL, {
+  useNewURLparser: true,
+});
+const db = mongoose.connection;
+db.on("error", (error) => console.error(error));
+db.once("open", () => console.log("connected to Mongoose"));
 // app.get("/", (req, res) => {
 //   res.render("index.ejs");
 // });
 const indexRouter = require("./routes/index");
 const petsRouter = require("./routes/pets");
+const caretakersRouter = require("./routes/caretakers");
 const bodyParser = require("body-parser"); //取得表單資料工具
 
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
@@ -62,9 +71,12 @@ app.get("/about", (req, res) => {
 app.get("/booking", (req, res) => {
   res.render("booking");
 });
-app.get("/caretakers", (req, res) => {
-  res.render("caretakers");
-});
+
+// app.get("/caretakers", (req, res) => {
+//   res.render("caretakers");
+// });
+
+app.use("/caretakers", caretakersRouter);
 app.get("/schedule", checkAuthenticated, (req, res) => {
   res.render("schedule");
 });
@@ -126,11 +138,5 @@ function checkNotAuthenticated(req, res, next) {
   }
   next();
 }
-const mongoose = require("mongoose");
-mongoose.connect(process.env.DATABASE_URL, {
-  useNewURLparser: true,
-});
-const db = mongoose.connection;
-db.on("error", (error) => console.error(error));
-db.once("open", () => console.log("connected to Mongoose"));
+
 app.listen(process.env.PORT || 3000);
