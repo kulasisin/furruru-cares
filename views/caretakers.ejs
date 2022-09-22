@@ -85,6 +85,7 @@ t="照護人員" class="caretaker-pic">
           <button type="submit" class="moreInfo" id= "<%= caretaker.id %>" >更多資訊</button>
         </form>
         <a href="#">收藏</a>
+        <a href="#">瀏覽數：<%=caretaker.clicked%></a>
         
       </div>
     </li>
@@ -105,8 +106,21 @@ t="照護人員" class="caretaker-pic">
     </html>
 
 <style>
-  /* .more-info button{
-    background: transparent;
-    border: 0px;
-  } */
+@media(max-width:567px){
+  .caretaker-pic {
+  width: 100%;
+  align-self: center;
+  }
+  .caretaker{
+    flex-direction: column;
+    margin-bottom:30px ;
+  }
+
+  .more-info {
+  position: relative;
+  display: flex;
+  padding-right: 15px;
+}
+  
+}
 </style>

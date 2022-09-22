@@ -57,6 +57,7 @@ db.once("open", () => console.log("connected to Mongoose"));
 // });
 const indexRouter = require("./routes/index");
 const petsRouter = require("./routes/pets");
+const usersRouter = require("./routes/user");
 const caretakersRouter = require("./routes/caretakers");
 const bodyParser = require("body-parser"); //取得表單資料工具
 
@@ -89,16 +90,17 @@ app.use("/pets", petsRouter);
 //   res.render("pets.ejs");
 // });
 // users login
-
+app.use("/user", usersRouter);
 app.post(
   "/login",
   checkNotAuthenticated,
   passport.authenticate("local", {
-    successRedirect: `/`,
+    successRedirect: `/user`,
     failureRedirect: `/login`,
     failureFlash: true,
   })
 );
+
 app.get("/login", checkNotAuthenticated, (req, res) => {
   res.render("login");
 });

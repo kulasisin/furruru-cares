@@ -7,7 +7,7 @@
     <title>FURRURU 即時動態</title>
     <script src="https://kit.fontawesome.com/f1f29270e9.js" crossorigin="anonymous"></script>
     <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script src="../../public/js/all.js"></script>
+    <script src="../../js/all.js"></script>
     <link rel="stylesheet" href="../../css/style.css">
   </head>
   <body>
@@ -19,7 +19,7 @@
           <li><a href="../schedule">寶貝動態</a></li>
           <li><a href="../cam">即時影像</a></li>
           <li><a href="../about">關於呼嚕</a></li>          
-          <li><a href="#">帳戶</a></li>
+          <li><a href="../user">帳戶</a></li>
           
         </ul>
         <i class="fa-solid fa-bars"></i>
@@ -52,6 +52,7 @@
       </div>
     </div>
     <div class="pet_content ">
+    <a href="/pets/new">新增寶貝</a>
         <ul class="pet-list">
         <% pets.forEach(pet=>{%>
             <li>
@@ -60,10 +61,10 @@
                 <div class="petsinfo-section">
                     
                     <ul class="petinfo">
-                        <li><p class="petname"><%= pet.name %></p></li>
-                        <li><%= pet.breed %></li>
-                        <li><%= pet.status %></li>
-                        <li><%= pet.birthday %></li>
+                        <li><p class="petname">寶貝姓名：<%= pet.name %></p></li>
+                        <li><p>寶貝品種：<%= pet.breed %></p></li>
+                        <li><p>寶貝年齡：<%= pet.status %></p></li>
+                        <li><p>寶貝生日：<%= pet.birthday %></p></li>
                     </ul>
                     <a class="petrecord" href="#">服務紀錄</a>
                 </div>
@@ -72,55 +73,21 @@
           <% })%>
         </ul>
       </div>
-    <div class="pet_content ">
-        <ul class="pet-list">
-            <li>
-                <div class="petsection">
-                <img src="../../img/petimage-1.jpg" alt="寵物照片">
-                <div class="petsinfo-section">
-                    
-                    <ul class="petinfo">
-                        <li><p class="petname">寵物姓名</p></li>
-                        <li>品種</li>
-                        <li>狀態</li>
-                        <li>生日</li>
-                    </ul>
-                    <a class="petrecord" href="#">服務紀錄</a>
-                </div>
-              </div>
-            </li>
-            <li><div class="petsection">
-                <img src="../../img/petimage-1.jpg" alt="寵物照片">
-                <div class="petsinfo-section">
-                    
-                    <ul class="petinfo">
-                        <li><p class="petname">寵物姓名</p></li>
-                        <li>品種</li>
-                        <li>狀態</li>
-                        <li>生日</li>
-                    </ul>
-                    <a class="petrecord" href="#">服務紀錄</a>
-                </div>
-              </div></li>
-            <li><div class="petsection">
-                <img src="../../img/petimage-1.jpg" alt="寵物照片">
-                <div class="petsinfo-section">
-                    
-                    <ul class="petinfo">
-                        <li><p class="petname">寵物姓名</p></li>
-                        <li>品種</li>
-                        <li>狀態</li>
-                        <li>生日</li>
-                    </ul>
-                    <a class="petrecord" href="#">服務紀錄</a>
-                </div>
-              </div></li>
-        </ul>
-      
-    </div>
     <div class="smiling_photo_phone features_3_pic"></div>
     
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="../../js/select.js"></script>
     </body>
 </html>
+<style>
+.banner .container{
+  flex-direction:row;
+}
+
+@media (max-width: 576px) {
+.banner .container{
+  flex-direction:column;
+}
+
+}
+</style>

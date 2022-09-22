@@ -950,7 +950,7 @@ h3 {
 .pet_content {
   max-width: 800px;
   margin: 0 auto;
-  background-color: #ffad92;
+  /* background-color: #ffad92; */
   padding: 9px 18px;
 }
 
