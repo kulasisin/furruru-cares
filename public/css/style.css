@@ -946,6 +946,22 @@ h3 {
   background-color: #ff7e42;
   color: #fff;
 }
+@media (max-width: 567px) {
+  .caretaker-pic {
+    width: 100%;
+    align-self: center;
+  }
+  .caretaker {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .more-info {
+    position: relative;
+    display: flex;
+    padding-right: 15px;
+  }
+}
 /* pets page */
 .pet_content {
   max-width: 800px;
