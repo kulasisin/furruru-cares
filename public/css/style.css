@@ -840,6 +840,41 @@ h3 {
     font-weight: bolder;
   }
 }
+.filter {
+  display: flex;
+  flex-direction: column;
+}
+.filter-title img {
+  display: block;
+  width: 200px;
+  height: auto;
+}
+.filter {
+  width: 800px;
+  background-image: linear-gradient(#ffefb5, #ffefb5, rgb(255, 255, 255));
+  padding: 20px 20px 30px 20px;
+  border-radius: 35px;
+}
+
+.filter-title {
+  display: flex;
+  font-size: 20px;
+  color: #fff;
+  margin: 10px 5px 30px 5px;
+}
+
+.filter-title p {
+  display: block;
+  padding: 5px 10px;
+  background-color: #fd891f;
+  font-weight: bolder;
+  border-radius: 30px;
+}
+.main-filter {
+  background-image: linear-gradient(#fec0a2, #fec0a2, #fff);
+  padding: 20px 40px 40px 50px;
+  border-radius: 25px;
+}
 .caretaker-list {
   margin: 20px;
   max-width: 800px;
@@ -996,4 +1031,56 @@ h3 {
 }
 .pet-list > li {
   margin: 18px 0;
+}
+
+.real-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 100px;
+}
+.side {
+  max-width: 300px;
+  border-radius: 30px;
+}
+.side img {
+  width: auto;
+  display: block;
+  max-width: 300px;
+  border-radius: 30px;
+}
+
+.main-info {
+  width: 900px;
+}
+.table {
+  padding-left: 30px;
+}
+.main-info .title {
+  background-color: #ff7e42;
+  border-radius: 50px;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px 0px;
+  margin-bottom: 15px;
+  width: 300px;
+  justify-content: flex-start;
+}
+
+.main-info .title p {
+  font-size: 26px;
+  font-weight: bolder;
+  margin-left: 10px;
+  display: block;
+}
+
+.table ul li {
+  font-size: 24px;
+  line-height: 1.4;
+  color: gray;
+}
+
+@media (max-width: 576px) {
+  .real-content {
+    flex-direction: column;
+  }
 }
