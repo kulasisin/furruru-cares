@@ -78,10 +78,10 @@ app.get("/booking", (req, res) => {
 // });
 
 app.use("/caretakers", caretakersRouter);
-app.get("/schedule", checkAuthenticated, (req, res) => {
+app.get("/schedule", checkNotAuthenticated, (req, res) => {
   res.render("schedule");
 });
-app.get("/cam", checkAuthenticated, (req, res) => {
+app.get("/cam", checkNotAuthenticated, (req, res) => {
   res.render("cam");
 });
 

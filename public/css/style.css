@@ -1084,3 +1084,26 @@ h3 {
     flex-direction: column;
   }
 }
+
+.cam {
+  width: 800px;
+  height: auto;
+  justify-self: center;
+}
+
+.safe_content {
+  margin: 0 auto;
+  display: flex;
+}
+.cam {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+@media (max-width: 576px) {
+  .cam {
+    width: 300px;
+  }
+}
