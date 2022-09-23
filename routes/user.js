@@ -3,7 +3,7 @@ const Pet = require("../models/pet");
 const router = express.Router();
 
 //user route
-router.get("/", checkAuthenticated, (req, res) => {
+router.get("/", (req, res) => {
   res.render("user-pages/user");
 });
 
@@ -30,11 +30,5 @@ router.post("/", async (req, res) => {
     });
   }
 });
-function checkAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
 
-  res.redirect("/login");
-}
 module.exports = router;
