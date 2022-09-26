@@ -1080,8 +1080,27 @@ h3 {
 }
 
 @media (max-width: 576px) {
+  .container {
+    max-width: 319px;
+  }
+
   .real-content {
     flex-direction: column;
+    padding: 30px;
+    align-items: center;
+  }
+  .real-content img {
+    max-width: 250px;
+    margin-bottom: 50px;
+  }
+  .main-info li {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  .main-info {
+    width: 319px;
   }
 }
 
